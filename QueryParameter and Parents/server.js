@@ -15,6 +15,10 @@ app.get("/profile/:id",(request , response) =>{
     //find in database
     response.send("profile page of" + " " + id);
 })
+app.get("/about" , (request , response)=>{
+    const {about} =  request.query;
+    response.send("About me : " + about);
+})
 
 app.listen(3100 , () =>{
     console.log(`server running on ${port}`)
