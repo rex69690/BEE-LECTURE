@@ -114,6 +114,21 @@ app.get("/blog/single" ,(request , response)=>{
     response.send("Not a user in blog section");
 })
 
+//to delete single user
+app.get("/delete" , (request , response)=>{
+    const {id}  = request.query;
+    for(let i  = 0 ; i < blog.length ; i++){
+        if(blog[i].id==id){
+            blog.splice(i ,1)
+            
+            response.send({ message: `Blog with id ${id} has been deleted.`, deletedBlog: blog[i] });
+            return;
+        }
+    };
+
+})
+
+
 app.listen(3100 , () =>{
     console.log(`server running on ${port}`)
 })
