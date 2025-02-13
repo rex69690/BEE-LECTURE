@@ -129,6 +129,23 @@ app.get("/delete" , (request , response)=>{
 })
 
 
+//to add a user
+
+app.get("/adduser" , (request , response)=>{
+    const {id, userName , address} = request.query;
+
+    console.log(id,userName,address);
+
+    let newUser = {
+        id : id,
+        name : userName,
+        address : address
+    }
+    blog.push(newUser);
+    response.send("user added successfully");
+})
+
+
 app.listen(3100 , () =>{
     console.log(`server running on ${port}`)
 })

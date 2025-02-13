@@ -21,3 +21,7 @@ for multipple id instances   = http://localhost:3100/profile/1/2/3
 
 
 const {id,username} = request.params;  //we use http://localhost:3100/profile/1&tushar
+
+
+
+//we use post requst becuase when we send data using get request the data get leaks as it is visible in url clearly to prevent that security threat we use post request method
