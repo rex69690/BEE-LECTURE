@@ -96,7 +96,7 @@ const blog = [
 ];
 
 //for all blog data
-app.get("/blog/all" , (request , response )=>{
+app.post("/blog/all" , (request , response )=>{
     response.send(blog);
 })
 
