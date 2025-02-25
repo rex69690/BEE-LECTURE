@@ -2,6 +2,7 @@ const express = require('express');
 const  app = express();
 const port  = 3400;
 app.use(express.urlencoded({extended : true}));
+app.use(express.json());
 
 //array to store form data 
 const users = [];
@@ -20,7 +21,7 @@ app.post("/adduser" , (req , res)=>{
     console.log(name , email , password);
 
     users.push({name , email , password});
-    res.send(`user ${name} registered successfully`);
+    res.send(users);
 
 })
 
